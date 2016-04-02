@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodNow.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace FoodNow.Controllers
 {
     public class HomeController : Controller
     {
+        FoodNowDb _db = new FoodNowDb();
         public ActionResult Index()
         {
-            return View();
+            var model = _db.Restaurants.ToList();
+            return View(model);
         }
 
         public ActionResult About()
@@ -25,6 +28,15 @@ namespace FoodNow.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if(_db != null)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

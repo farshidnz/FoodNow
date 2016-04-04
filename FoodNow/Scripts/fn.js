@@ -12,6 +12,7 @@
         });
         return false;
     };
+
     var submitAutocompleteForm = function (event, ui) {
         var $input = $(this);
         $input.val(ui.item.label);
@@ -21,12 +22,13 @@
 
     var createAutocomplete = function () {
         var $input = $(this);
+
         var options = {
             source: $input.attr("data-fn-autocomplete")
             //select: submitAutocompleteForm
         }; 
-        $input.autocomplete(options);
+        $input.autocomplete(optsions);
     };
     $("form[data-fn-ajax='true'").submit(ajaxFormSubmit);
-    $("input[data-fn-autocomplete]").each(createAutocomplete);
+    $("iput[data-fn-autocomplete]").each(createAutocomplete);
 });

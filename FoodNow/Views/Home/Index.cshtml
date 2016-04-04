@@ -3,7 +3,9 @@
     ViewBag.Title = "Home Page";
 }
 <form method="get" action="@Url.Action("Index")" data-fn-ajax="true" data-fn-target="#restaurantList">
-    <input type="search" name="searchTerm" data-fn-autocomplete="@Url.Action("Autocomplete")"/>
+    <input type="search" id="search" name="searchTerm" data-fn-autocomplete="@Url.Action("Autocomplete","Home")" autocomplete="on"/>
     <input type="submit" value="Search By Suburb"/>
 </form>
+
+
 @Html.Partial("_Restaurants",Model)

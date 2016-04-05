@@ -13,22 +13,14 @@
         return false;
     };
 
-    var submitAutocompleteForm = function (event, ui) {
-        var $input = $(this);
-        $input.val(ui.item.label);
-        var $form = $input.parent("form:first");
-        $form.submit();
-    };
+    $(function () {
+        $("#search").focus();
+    });
 
-    var createAutocomplete = function () {
-        var $input = $(this);
-
-        var options = {
-            source: $input.attr("data-fn-autocomplete")
-            //select: submitAutocompleteForm
-        }; 
-        $input.autocomplete(optsions);
-    };
     $("form[data-fn-ajax='true'").submit(ajaxFormSubmit);
-    $("iput[data-fn-autocomplete]").each(createAutocomplete);
+    //Removing bullets and underline from autocomplete
+    $('.ui-autocomplete').css('list-style-type', 'none');
+    $('.ui-autocomplete').css('text-decoration', 'none');
+
+   
 });

@@ -3049,7 +3049,8 @@ $.widget( "ui.autocomplete", {
 				"aria-live": "assertive",
 				"aria-relevant": "additions"
 			})
-			.addClass( "ui-helper-hidden-accessible" )
+			.addClass("ui-helper-hidden-accessible")
+            .visible("hidden") // Farshid: hidding unnecessary display
 			.appendTo( this.document[ 0 ].body );
 
 		// turning off autocomplete prevents the browser from remembering the

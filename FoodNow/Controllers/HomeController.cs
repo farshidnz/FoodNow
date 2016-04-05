@@ -18,13 +18,18 @@ namespace FoodNow.Controllers
         }
         public ActionResult Index(string searchTerm = null)
         {
-            var model = _db.Restaurants.Where(r => searchTerm == null || r.Suburb.Equals(searchTerm))
-                .Take(10).ToList();
-            if (Request.IsAjaxRequest())
+            if (searchTerm != null)
             {
-                return PartialView("_Restaurants", model);
+                var model = _db.Restaurants.Where(r => searchTerm == null || r.Suburb.Equals(searchTerm))
+                    .Take(10).ToList();
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_Restaurants", model);
+                }
+                return View(model);
             }
-            return View(model);
+            var emptyModel = new List<Restaurant>();
+            return View(emptyModel);
         }
 
         public ActionResult About()

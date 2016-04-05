@@ -2,10 +2,22 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<form method="get" action="@Url.Action("Index")" data-fn-ajax="true" data-fn-target="#restaurantList">
-    <input type="search" id="search" name="searchTerm" data-fn-autocomplete="@Url.Action("Autocomplete","Home")" autocomplete="on"/>
-    <input type="submit" value="Search By Suburb"/>
+
+<form method="get" action="@Url.Action("Index")" data-fn-ajax="true" data-fn-target="#restaurantList" style="text-align:center;" >
+    <input type="search" id="search" name="searchTerm" class="sreachtextbox" placeholder="Location"/>
+    <script>
+        var submitAutocompleteForm = function (event, ui) {
+            var $input = $(this);
+            $input.val(ui.item.label);
+            var $form = $input.parent("form:first");
+            $form.submit();
+        };
+
+        $("#search").autocomplete({
+            source: '@Url.Action("Autocomplete","Home")',   
+            select: submitAutocompleteForm
+});
+    </script>
 </form>
 
-
-@Html.Partial("_Restaurants",Model)
+    @Html.Partial("_Restaurants", Model)

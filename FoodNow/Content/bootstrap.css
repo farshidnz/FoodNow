@@ -6814,3 +6814,53 @@ td.visible-print {
     display: none !important;
   }
 }
+ 
+
+ 
+@media (max-width: 767px) {
+.sreachtextbox { 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0; 
+    height:36px; 
+    width: 180px; 
+ } 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.sreachtextbox { 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0; 
+    height:36px; 
+    width: 300px; 
+ } 
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.sreachtextbox { 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0; 
+    height:36px; 
+    width: 488px; 
+ } 
+}
+
+@media (min-width: 1200px) {
+.sreachtextbox { 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0; 
+    height:36px; 
+    width: 660px; 
+ } 
+}

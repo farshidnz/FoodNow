@@ -13,7 +13,7 @@ namespace FoodNow.Controllers
 
         public ActionResult Autocomplete(string term)
         {
-            var model = _db.Restaurants.Where(r => r.Suburb.StartsWith(term)).Take(7).Select(r => new { label = r.Suburb });
+            var model = _db.Restaurants.Where(r => r.Suburb.StartsWith(term)).Take(7).Select(r => new { label = r.Suburb }).Distinct();
             return Json(model, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Index(string searchTerm = null)

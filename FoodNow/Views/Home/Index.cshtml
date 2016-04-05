@@ -19,5 +19,21 @@
 });
     </script>
 </form>
+    <form method="get" action="@Url.Action("Index")" data-fn-ajax="true" data-fn-target="#restaurantList" style="text-align:center;">
+        <input type="search" id="searchCenter" name="searchTerm" class="sreachtextboxcent" placeholder="Location"  />
+        <script>
+            var submitAutocompleteForm = function (event, ui) {
+                var $input = $(this);
+                $input.val(ui.item.label);
+                var $form = $input.parent("form:first");
+                $form.submit();
+            };
 
+            $("#search").autocomplete({
+                source: '@Url.Action("Autocomplete","Home")',
+                select: submitAutocompleteForm
+            });
+        </script>
+    </form>
+   
     @Html.Partial("_Restaurants", Model)

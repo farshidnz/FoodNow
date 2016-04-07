@@ -3,8 +3,8 @@
     ViewBag.Title = "Home Page";
 }
 
-<form method="get" action="@Url.Action("DisplayPlaces","FoodPlaces",null,null)" data-fn-target="#restaurantList" style="text-align:center;">
-    <input type="search" id="searchCenter" name="searchTerm" class="sreachtextboxcent" placeholder="Location" />
+<form method="get" action="@Url.Action("DisplayPlaces")" data-fn-ajax="true" data-fn-target="#restaurantList" style="text-align:center;">
+    <input type="search" id="search" name="searchTerm" class="sreachtextbox" placeholder="Location" value="@Model.First().Suburb"/>
     <script>
         var submitAutocompleteForm = function (event, ui) {
             var $input = $(this);
@@ -13,10 +13,13 @@
             $form.submit();
         };
 
-        $("#searchCenter").autocomplete({
+        $("#search").autocomplete({
             source: '@Url.Action("Autocomplete","Home")',
             select: submitAutocompleteForm
         });
     </script>
+    @Html.Partial("_EditSearch", Model)
 </form>
 
+
+@Html.Partial("_Restaurants", Model)

@@ -14,5 +14,8 @@ namespace FoodNow.Models
         public string Suburb { get; set; }
         public string Country { get; set; }
         public string Address { get; set; }
+        public string Type_Restaurant { get; set; }
+        public string Cousin { get; set; }
+        public string Delivery { get; set; }
     }
 }

@@ -11,26 +11,56 @@
 
 
             <div class="form-group">
-                @Html.LabelFor(model => model.First().Type_Restaurant, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.First().Type_Restaurant, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                @Html.Label("Food Place Type", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.First().Type_Restaurant, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.First().Type_Restaurant, "", new { @class = "text-danger" })
+                 @*  @Html.CheckBoxFor(model => model.First().Type_Restaurant., new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.First().Type_Restaurant, "", new { @class = "text-danger" })*@
+                    <span>Take Away</span>
+                    @Html.CheckBox("TakeAway", new { @checked = "checked" })
+                    <span>Fast Food</span>
+                    @Html.CheckBox("FastFood", new { @checked = "checked" })
+                    <span>Food Truck</span>
+                    @Html.CheckBox("Truck", new { @checked = "checked" })
+                    <span>truck</span>
+                    @Html.CheckBox("Truck", new { @checked = "checked" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.First().Cousin, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.First().Cousin, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                @Html.Label("Cousin", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.First().Cousin, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.First().Cousin, "", new { @class = "text-danger" })
+                    @*@Html.EditorFor(model => model.First().Cousin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.First().Cousin, "", new { @class = "text-danger" })*@
+
+                    <span>Asian</span>
+                    @Html.CheckBox("Asian", new { @checked = "checked" })
+                    <span>Indian</span>
+                    @Html.CheckBox("Indian", new { @checked = "checked" })
+                    <span>Mediterranean/Middle Eastern</span>
+                    @Html.CheckBox("Mediterranean/Middle Eastern", new { @checked = "checked" })
+                    <span>African</span>
+                    @Html.CheckBox("African", new { @checked = "checked" })
+                    <span>Western</span>
+                    @Html.CheckBox("Western", new { @checked = "checked" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.First().Delivery, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.First().Delivery, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                @Html.Label("Delivery", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.First().Delivery, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.First().Delivery, "", new { @class = "text-danger" })
+                    @*@Html.EditorFor(model => model.First().Delivery, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.First().Delivery, "", new { @class = "text-danger" })*@
+
+                    <span>Yes</span>
+                    @Html.CheckBox("DeliveryYes", new { @checked = "checked" })
+
+                    <span>No</span>
+                    @Html.CheckBox("DeliveryNo", new { @checked = "checked" })
                 </div>
             </div>
         </div>

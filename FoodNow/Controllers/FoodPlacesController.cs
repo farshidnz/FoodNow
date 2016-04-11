@@ -20,15 +20,17 @@ namespace FoodNow.Controllers
                 if (Request.IsAjaxRequest())
                 {
                     return PartialView("_Restaurants", model);
-                }
+                }        
                 return View(model);
             }
             var emptyModel = new List<Restaurant>();
             return View(emptyModel);
         }
 
-        public ActionResult EditSearch(List<Restaurant> model)
+        public ActionResult EditSearch()
         {
+            var model = _db.Restaurants
+                .Take(10).ToList();
             return View(model);
         }
 

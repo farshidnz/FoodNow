@@ -27,7 +27,7 @@ namespace FoodNow.Controllers
             return View(emptyModel);
         }
 
-        public ActionResult EditSearch()
+        public ActionResult EditSearch(Guid[] selectedObjects)
         {
             var model = _db.Restaurants
                 .Take(10).ToList();
